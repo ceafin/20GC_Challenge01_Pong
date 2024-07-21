@@ -1,0 +1,42 @@
+[gd_scene load_steps=9 format=3 uid="uid://oxqenoryw1vs"]
+
+[ext_resource type="Script" path="res://scripts/Main.gd" id="1_4xom4"]
+[ext_resource type="Texture2D" uid="uid://drysipqt50ste" path="res://assets/wallpapersden.com_galaxies-pixel-art_2275x1280.jpg" id="2_wyd85"]
+[ext_resource type="PackedScene" uid="uid://x6fmrh8svubf" path="res://scenes/boundaries.tscn" id="3_p6781"]
+[ext_resource type="PackedScene" uid="uid://dql41egsyepqf" path="res://scenes/Ball.tscn" id="4_xelfm"]
+[ext_resource type="PackedScene" uid="uid://3towhtco38sj" path="res://scenes/Paddle.tscn" id="5_t21b1"]
+[ext_resource type="Texture2D" uid="uid://fwhic5x88mfc" path="res://assets/paddle1_2p.png" id="6_me253"]
+[ext_resource type="Texture2D" uid="uid://bn6ookdv4hwe0" path="res://assets/paddle2_2p.png" id="7_87dxn"]
+[ext_resource type="PackedScene" uid="uid://5p4vg8hut88e" path="res://scenes/ui_layer.tscn" id="8_h6ww1"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_4xom4")
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("2_wyd85")
+
+[node name="Boundaries" parent="." instance=ExtResource("3_p6781")]
+
+[node name="Ball" parent="." instance=ExtResource("4_xelfm")]
+visible = false
+speed = 300
+
+[node name="Paddle1" parent="." instance=ExtResource("5_t21b1")]
+position = Vector2(-281, 0)
+player = 1
+myUp = "lup_up"
+myDown = "lup_down"
+texture = ExtResource("6_me253")
+
+[node name="Paddle2" parent="." instance=ExtResource("5_t21b1")]
+position = Vector2(281, 0)
+player = 2
+myUp = "rup_up"
+myDown = "rup_down"
+texture = ExtResource("7_87dxn")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="UILayer" parent="." instance=ExtResource("8_h6ww1")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

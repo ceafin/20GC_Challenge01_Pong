@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cato1i24qdhkg"]
+
+[ext_resource type="FontFile" uid="uid://cu3t4wt4nf282" path="res://assets/upheavtt.ttf" id="1_2demi"]
+
+[resource]
+BoxContainer/constants/separation = 0
+Label/font_sizes/font_size = 42
+Label/fonts/font = ExtResource("1_2demi")

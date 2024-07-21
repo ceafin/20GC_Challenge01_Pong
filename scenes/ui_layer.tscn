@@ -1,0 +1,60 @@
+[gd_scene load_steps=3 format=3 uid="uid://5p4vg8hut88e"]
+
+[ext_resource type="Theme" uid="uid://cato1i24qdhkg" path="res://resources/game_theme.tres" id="1_n7rep"]
+[ext_resource type="Script" path="res://scripts/ui_layer.gd" id="1_yqsfh"]
+
+[node name="UILayer" type="CanvasLayer"]
+script = ExtResource("1_yqsfh")
+
+[node name="ScoreBar" type="HBoxContainer" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 39.0
+grow_horizontal = 2
+size_flags_horizontal = 6
+theme = ExtResource("1_n7rep")
+alignment = 1
+
+[node name="LUP" type="Label" parent="ScoreBar"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme = ExtResource("1_n7rep")
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RUP" type="Label" parent="ScoreBar"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme = ExtResource("1_n7rep")
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameOver" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.0
+offset_top = -29.0
+offset_right = 115.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="GameOver" type="Label" parent="GameOver"]
+layout_mode = 2
+theme = ExtResource("1_n7rep")
+text = "Game Over!"
+
+[node name="Label" type="Label" parent="GameOver"]
+layout_mode = 2
+theme = ExtResource("1_n7rep")
+theme_override_font_sizes/font_size = 16
+text = "Press Enter to Play Again
+Esc to Quit"
+horizontal_alignment = 1
+vertical_alignment = 1

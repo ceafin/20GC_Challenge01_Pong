@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://x6fmrh8svubf"]
+
+[ext_resource type="Script" path="res://scripts/gameover_walls.gd" id="1_av5l2"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_levqo"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4liay"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bdfsk"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vhjjs"]
+normal = Vector2(1, 0)
+
+[node name="Boundaries" type="Node"]
+
+[node name="NorthWall" type="StaticBody2D" parent="."]
+position = Vector2(0, -180)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NorthWall"]
+shape = SubResource("WorldBoundaryShape2D_levqo")
+
+[node name="SouthWall" type="StaticBody2D" parent="."]
+position = Vector2(0, 180)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SouthWall"]
+shape = SubResource("WorldBoundaryShape2D_4liay")
+
+[node name="EastWall" type="StaticBody2D" parent="."]
+position = Vector2(320, 0)
+script = ExtResource("1_av5l2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EastWall"]
+shape = SubResource("WorldBoundaryShape2D_bdfsk")
+
+[node name="WestWall" type="StaticBody2D" parent="."]
+position = Vector2(-320, 0)
+script = ExtResource("1_av5l2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WestWall"]
+shape = SubResource("WorldBoundaryShape2D_vhjjs")
